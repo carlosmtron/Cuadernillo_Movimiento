@@ -1,0 +1,25 @@
+ToDo List
+- Pasar todas las deducciones a escalar
+- HECHO - Arreglar error en la definición de v_m, está Delta x/Delta x
+- HECHO - Agregar la parte de gráficas a MRU (Lo está haciendo Carlos)
+- HECHO - Terminar MRUV (Lo hizo Nacho)
+- HECHO Pasar el TP de la bolita y el detergente (Lo hace Emanuel)
+- Armar Problema de ejemplo Integrador con Gráfica combinada de MRU y MRUV (Lo arma Matías)
+- Corregir notación de las respuestas: Los módulos se escriben con $|\bar{v}|$
+- Definir autores del apunte, ¿vamos a considerar que este es un apunte nuevo y citamos al viejo?
+ → EDIT (Carlos): ¡Considero que sí! El viejo tiene que ir en la bibliografía, y el Maiztegui Sábato también.
+- Numerar los ejemplos
+- En el «Ejercita tu comprensión» de la parte de posición está marcado de poner dos ejercicios más (El mapita y otro) resolver eso.
+ → EDIT: (Carlos) Pienso que el mapita podría ir en los problemas, si es que lo vamos a poner. Ahí yo pondría uno en que el desplazamiento sea en sentido contrario al elegido como positivo.
+.
+.
+.
+- Compaginación final :D
+
+WishList
++ Agregar un cuadro de magnitudes escalares y vectoriales (no está explicado qué es qué).
++ Ver qué hyperlinks se pueden agregar.
++ Cambiar los colorcitos de las ecuaciones.
+ → EDIT: (Carlos) o usar una paleta de colores para todo jajaja
++ HECHO - Ver de ajustar los márgenes para que queden un poco más prolijos con el encabezado del poli.
++ Revisar colores de fórmulas/vectores/gráficas

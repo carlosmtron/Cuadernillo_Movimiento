@@ -1,0 +1,148 @@
+%%  PLANTILLA PARA CUADERNILLOS DEL POLI
+%%  SE NECESITA UN ARCHIVO *IMAGEN* PDF LLAMADO fondoimpar.pdf
+%%  Y OTRO LLAMADO fondopar.pdf PARA SIMULAR LOS ENCABEZADOS
+%%  Y PIES DE PÁGINA.
+%%
+%%  AUTOR DE LA PLANTILLA: Carlos M. Silva
+%%  Dpto. de Física
+%%  carlosmauriciosilva@gmail.com
+
+\documentclass[a4paper, 12pt, usenames]{report}
+
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{bbding} %Fuentes con iconos lindos
+\usepackage[rflt]{floatflt} %Para meter figuras flotantes entre el texto
+\usepackage[font=footnotesize,labelfont=bf]{caption} %Tamaño y formato de los epígrafes
+\usepackage[dvipsnames]{xcolor}
+\usepackage{background}
+\usepackage{ifoddpage}
+\usepackage[hidelinks]{hyperref} %Comentar si no se quieren hipervínculos % hidelinks oculta los bordes feos de los hipervinculos. Se puede quitar esa opción.
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{bclogo} %Íconos bonitos hechos con tikz
+\usepackage{fixmath}
+\usepackage{subcaption}
+\usepackage{flushend}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{cancel}
+
+\usetikzlibrary{calc}
+
+%%%%%%%%%%%%%%%%%%%%% Comandos de títulos especiales %%%%%%%%%%%%%%%%
+
+
+\newcommand{\defin}[1]{\bigskip{\large  \color{Orange} \PencilRightDown{} \bf {#1}} }
+\newcommand{\ejerc}[1]{\bigskip{\color{OliveGreen} {\small \FourClowerSolid{}} { \bf Ejercita tu comprensión:}}
+
+  \vspace*{-0.5\baselineskip}
+  \noindent
+  \rule{17cm}{.5pt}
+#1
+
+\vspace*{-0.5\baselineskip}
+\noindent
+\rule{17cm}{.5pt}
+\vspace*{-0.5\baselineskip}
+}
+
+\newcommand{\info}[1]{
+\begin{itemize}
+\item[\bcinfo] {\footnotesize {#1}}
+\end{itemize}
+}
+
+%%%%%%%%%%%%%%%%%%% Comando para poner respuestas a los problemas
+\newcommand{\resp}[1]{\vspace*{-0.9\baselineskip}
+  \begin{flushright}
+    {\small \sf R) {#1} }
+  \end{flushright}
+%  \vspace*{-0.5\baselineskip}
+}
+
+%%%%%%%%%%%%%%%%%% Comando para poner unidades como en el SI
+\newcommand{\si}[1]{\ \mbox{#1}}
+\newcommand{\sif}[2]{\ \frac{\mbox{#1}}{\mbox{#2}}}
+
+%%%%%%%%%%%%%%%%% Ajuste de márgenes
+\topmargin=-1cm
+\oddsidemargin=-0.5cm
+\textheight=24cm
+\textwidth=17cm
+
+
+%%%%%%%%%%%%%%%%%%%%%%% NUMERANDO LAS PÁGINAS %%%%%%%%%%%
+\newcommand{\imparpnum}{% Defino Posición Nro de Página IMPAR
+    %\thispagestyle{empty}%
+  \begin{tikzpicture}[remember picture, overlay]
+        \node[align=center] at ($(current page.south east)+(-24.6mm,23.1mm)$)
+% Para corregir la posición del número de página, modificar las coordenadas en la línea anterior
+        [
+            inner sep=0pt, align=center
+        ]
+        {%
+           {\sf \thepage}
+        };
+    \end{tikzpicture}%
+    \ignorespaces
+}
+\newcommand{\parpnum}{% Defino Posición Nro de Página PAR
+    %\thispagestyle{empty}%
+    \begin{tikzpicture}[remember picture, overlay]
+        \node at ($(current page.south east)+(-186mm,22.4mm)$)
+% Para corregir la posición del número de página, modificar las coordenadas en la línea anterior
+        [
+            inner sep=0pt, align=center
+        ]
+        {%
+            {\sf \thepage}
+        };
+    \end{tikzpicture}%
+    \ignorespaces
+}
+
+%% Este código coloca fondoimpar.pdf y fondopar.pdf como fondos de página para páginas impares y pares respectivamente.
+\backgroundsetup{
+scale=1,
+opacity=1,
+angle=0,
+color=black,
+contents={%
+ \checkoddpage
+  \ifoddpage
+   \includegraphics[height=\paperheight]{fondoimpar.pdf}
+   \imparpnum
+  \else
+   \includegraphics[height=\paperheight]{fondopar.pdf}
+   \parpnum
+  \fi
+}
+}
+\begin{document}
+  \pagestyle{empty}
+  \thispagestyle{empty}
+
+  \begin{center}
+      \Large Trabajo Práctico N$^{\circ}$ 1 - Comentarios para JTP
+  \end{center}
+
+\begin{itemize}
+  \item Entregar una esferita a cada grupo y un imán para que puedan sacarla del tubo.
+  \item Sugerir el sistema de referencia (aclarar que el cero no está en la superficie del líquido).
+  \item El cronómetro de los celulares marca los tiempos parciales, así que se pueden hacer la parte 1 y 2 al mismo tiempo.
+  \item Para evaluar incertezas procederán a calcular:
+  \begin{enumerate}
+    \item $v_m$ promedio
+    \item las desviaciones de cada valor observado $\varepsilon_i \ = \ | v_{prom} \ – \ v_m |$.
+    \item Elegir incerteza de vprom εmax (recordar que hay que redondear el valor).
+  \end{enumerate}
+
+  \item Expresar el resultado de la medición $v_m \ = \ v_{prom} \ \pm \ \varepsilon_{max}$, indicando unidad, dirección y sentido.
+  \item Para la gráfica verificar la utilización de una escala adecuada y comentar cómo trazar la línea recta.
+  \item En la conclusión indicar si la esfera se desplaza con velocidad constante y cuál es el movimiento que describe.
+\end{itemize}
+
+\end{document}
